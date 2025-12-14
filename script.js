@@ -1,5 +1,3 @@
-const API_KEY = "YOUR_API_KEY";
-
 function getWeather() {
   const city = document.getElementById("cityInput").value.trim();
   if (!city) {
@@ -7,7 +5,7 @@ function getWeather() {
     return;
   }
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=id&appid=${API_KEY}`)
+  fetch(`/api/weather?city=${city}`)
     .then(res => res.json())
     .then(data => {
       if (data.cod !== 200) {
