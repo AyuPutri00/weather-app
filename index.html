@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather App</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-pink-600  min-h-screen flex items-center justify-center p-4">
+
+    
+  <div class="w-full max-w-3xl">
+    
+    <!-- INPUT CARD -->
+    <div class="bg-white rounded-2xl shadow-xl p-7 text-center">
+      <h1 class="text-2xl font-bold mb-4">🌦️ Ayu's Weather App</h1>
+      <p class="mb-4 text-sm text-gray-500">Built with HTML + Tailwind CSS + JavaScript</h1>
+
+      <div class="flex flex-col sm:flex-row gap-2">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Masukkan nama kota"
+          class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-pink-300"
+        />
+        <button
+          type="button"
+          onclick="getWeather()"
+          class="w-full sm:w-auto bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg transition"
+        >
+          Cek Cuaca
+        </button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div id="weatherResult" class="hidden mt-6">
+      
+      <!-- HEADER -->
+      <div class="text-center text-white mb-4">
+        <h2 id="cityName" class="text-4xl font-bold"></h2>
+        <p id="description" class="text-xl capitalize mt-1"></p>
+        <img id="weatherIcon" class="mx-auto" />
+      </div>
+
+      <!-- DATA GRID -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+        <div class="bg-white rounded-xl p-4 shadow text-center">
+          <p class="text-gray-500 text-sm">Suhu</p>
+          <p id="temp" class="text-2xl font-bold"></p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow text-center">
+          <p class="text-gray-500 text-sm">Feels Like</p>
+          <p id="feelsLike" class="text-2xl font-bold"></p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow text-center">
+          <p class="text-gray-500 text-sm">Kelembapan</p>
+          <p id="humidity" class="text-2xl font-bold"></p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow text-center">
+          <p class="text-gray-500 text-sm">Tekanan</p>
+          <p id="pressure" class="text-2xl font-bold"></p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow text-center">
+          <p class="text-gray-500 text-sm">Kecepatan Angin</p>
+          <p id="windSpeed" class="text-2xl font-bold"></p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 shadow text-center">
+          <p class="text-gray-500 text-sm">Arah Angin</p>
+          <p id="windDeg" class="text-2xl font-bold"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
